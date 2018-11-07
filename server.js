@@ -5,8 +5,6 @@ const data = require('./data.json');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-/* change when needed */
-const deploy_config = "production" 
 /* Sorts Data into useful groups */
 
 /* Has just raw foods */
@@ -102,7 +100,7 @@ app.get('/foods', (req, res) => {
 });
 /***********************************/
 /* Used to deploy to Heroku */
-if (deploy_config === 'production') {
+if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'client/build')));
   // Handle React routing, return all requests to React app
