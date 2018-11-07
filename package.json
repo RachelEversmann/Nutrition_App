@@ -5,7 +5,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "path": "^0.12.7"
   },
   "scripts": {
     "client": "cd client && npm run start",
