@@ -5,13 +5,15 @@ const data = require('./data.json');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-/* Sorts Data into useful groups */
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Has just raw foods */
 const foods = data.report.foods;
 /* List all the nutrients and their qty */
 let nutrients = {};
 
+/* Sorts Data into useful groups */
 _.forEach(foods, food => {
   let nutrients_ids = [];
   _.forEach(food.nutrients, el => {
